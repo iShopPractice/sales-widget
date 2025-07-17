@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 
-import { widgetData, widgetVisibleData } from '@/data'
 import { WidgetDTO } from '@/models'
+import { widgetData } from '@/data'
 
 const useWidget = () => {
   const [widgets, setWidgets] = useState<WidgetDTO[]>([])
@@ -12,10 +12,9 @@ const useWidget = () => {
     setLoading(true)
 
     const timer = setTimeout(() => {
-      const visibles = widgetData.filter(w => widgetVisibleData.some(item => item.widgetId === w.id))
-      setWidgets(visibles)
+      setWidgets(widgetData)
       setLoading(false)
-    }, 3500)
+    }, 1500)
 
     return () => clearTimeout(timer)
   }, [])

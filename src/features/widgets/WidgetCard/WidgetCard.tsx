@@ -1,7 +1,9 @@
 import { Card, Image } from '@/components'
 
-import style from './WidgetCard.module.css'
+import { useWidgetContext } from '@/hooks'
 import { WidgetDTO } from '@/models'
+
+import style from './WidgetCard.module.css'
 import svg, { Assets } from './assets'
 
 interface Props {
@@ -9,10 +11,12 @@ interface Props {
 }
 
 const WidgetCard = ({ data: { id, key, text, value, variation, widgetVariation } }: Props) => {
+  const { modify } = useWidgetContext()
+
   const isNegative = variation < 0
 
   return (
-    <Card className={style.card}>
+    <Card className={`${style.card} ${modify ? style.modify : ''}`}>
       <Image alt={`widget-pic-${id}`} src={svg[key]} className={style.image} />
       <div className={style.content}>
         <h4 className={style.value}>

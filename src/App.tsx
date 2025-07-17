@@ -1,11 +1,12 @@
 import { useEffect } from 'react'
 
+import { WidgetCard } from './features/widgets'
+import { WidgetContext } from './context'
 import { WidgetLayout } from '@/layouts'
-import { WidgetCard } from '@/features'
 import { useWidget } from '@/hooks'
 
 const App = () => {
-  const { loading, widgets } = useWidget()
+  const { loading, widgets, modify, toggleModify } = useWidget()
 
   useEffect(() => {
     const setVH = () => {
@@ -19,11 +20,13 @@ const App = () => {
   }, [])
 
   return (
-    <WidgetLayout loading={loading}>
-      {widgets.map(data => (
-        <WidgetCard key={data.id} data={data} />
-      ))}
-    </WidgetLayout>
+    <WidgetContext.Provider value={{ modify }}>
+      <WidgetLayout loading={loading} onClick={toggleModify}>
+        {widgets.map(data => (
+          <WidgetCard key={data.id} data={data} />
+        ))}
+      </WidgetLayout>
+    </WidgetContext.Provider>
   )
 }
 

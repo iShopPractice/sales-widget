@@ -10,6 +10,7 @@
   position: relative;
   width: 100%;
   display: flex;
+  min-height: 116px;
   align-items: center;
   height: fit-content;
   transition: ease-out 0.3s;
@@ -149,4 +150,24 @@
 
 .shape:nth-child(2) {
   max-width: 14ch;
+}
+
+.bgModify {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  z-index: -1;
+  height: 100%;
+  padding: 6px 20px;
+  width: calc(100% - 20px);
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 20px;
+  background: var(--white);
+  transition: ease-out 0.3s;
+}
+
+.bgModify.show {
+  opacity: 1;
+  visibility: visible;
 }

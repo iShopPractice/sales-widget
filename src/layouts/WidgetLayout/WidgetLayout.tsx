@@ -1,16 +1,20 @@
 import { useEffect, useRef } from 'react'
 
-import { Button, Card } from '../../components'
+import { Button, Card } from '@/components'
+import { useWidgetContext } from '@/hooks'
+
 import style from './WidgetLayout.module.css'
 import Assets from './assets'
 
 interface Props {
   loading?: boolean
+  onClick?: () => void
   children?: React.ReactNode
 }
 
-const WidgetLayout = ({ loading, children }: Props) => {
+const WidgetLayout = ({ loading, children, onClick }: Props) => {
   const ref = useRef<HTMLDivElement | null>(null)
+  const { modify } = useWidgetContext()
 
   useEffect(() => {
     if (ref.current) {
@@ -36,7 +40,9 @@ const WidgetLayout = ({ loading, children }: Props) => {
 
   return (
     <article className={style.article}>
-      <Button className={style.button} leftIcon unfilled icon={Assets.edit} value="Editar" />
+      {modify && (
+        <Button className={style.button} leftIcon unfilled icon={Assets.edit} value="Editar" onClick={onClick} />
+      )}
       <div className={style.container}>
         <div className={style.content} ref={ref}>
           {loading
@@ -55,6 +61,7 @@ const WidgetLayout = ({ loading, children }: Props) => {
               ))
             : children}
         </div>
+        <div className={`${style.bgModify} ${modify ? style.show : ''}`}></div>
       </div>
     </article>
   )
