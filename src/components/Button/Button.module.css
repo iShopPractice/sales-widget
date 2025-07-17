@@ -1,0 +1,87 @@
+.button {
+  position: relative;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  color: var(--black-12);
+  background: var(--primary-4);
+  gap: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-out 0.2s;
+}
+
+.button:hover {
+  background: var(--primary-2);
+}
+
+.button:active {
+  background: var(--primary);
+  scale: 0.95;
+}
+
+.unfilled {
+  color: var(--black-3);
+  background: 0;
+}
+
+.unfilled:hover {
+  background: 0;
+  color: var(--primary);
+}
+
+.unfilled:active {
+  color: var(--primary);
+  background: 0;
+}
+
+.unfilled:is(:hover, :active) > div > svg > path {
+  fill: var(--primary);
+}
+
+.large {
+  font: normal 700 18px/132% "Raleway";
+  padding: 16px 30px 16px 30px;
+}
+
+.medium {
+  font: normal 700 16px/148% "Raleway";
+  padding: 10px 24px 10px 24px;
+}
+
+.small {
+  font: normal 700 14px/140% "Raleway";
+  padding: 8px 16px 8px 16px;
+}
+
+.button:disabled {
+  color: white;
+  background: var(--primary-6);
+}
+
+.button:disabled:active {
+  scale: 1;
+}
+
+.unfilled:disabled {
+  color: var(--primary-6);
+  background: 0;
+}
+
+.svg-icon-div {
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.svg-icon-div > svg > path {
+  transition: ease-out 0.3s;
+  fill: var(--black-12);
+}
+
+.unfilled > div > svg > path {
+  fill: var(--primary);
+}

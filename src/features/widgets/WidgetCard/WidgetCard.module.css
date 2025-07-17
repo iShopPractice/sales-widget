@@ -1,0 +1,117 @@
+.card {
+  position: relative;
+  gap: 20px;
+  display: flex;
+  padding: 8px 16px;
+  min-width: 360px;
+  aspect-ratio: 7/2;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+
+  transition: ease-out 0.4s;
+
+  @starting-style {
+    blur: 2px;
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.image {
+  aspect-ratio: 1/1;
+  width: 68px;
+  height: 68px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: var(--primary-10);
+
+  transition: ease-out 0.6s;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.image > img {
+  width: 48px;
+  height: 48px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  transition: ease-out 0.6s;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.variation {
+  position: absolute;
+  gap: 4px;
+  top: 12px;
+  right: 14px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  transition: ease-out 0.7s;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  aspect-ratio: 1/1;
+}
+
+.icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.variation.negative > span {
+  color: var(--color-error);
+}
+
+.variation.positive > span {
+  color: var(--color-approval);
+}
+
+.variation.negative > div > svg > path {
+  fill: var(--color-error);
+}
+
+.variation.positive > div > svg > path {
+  fill: var(--color-approval);
+}
+
+.variation > span {
+  font: normal 600 14px/22px 'Inter', sans-serif;
+  transition: ease-out 0.3s;
+  color: var(--black-6);
+}
+
+.value {
+  font: normal 600 16px/22px 'Inter', sans-serif;
+  color: var(--black-4);
+}
+
+.text {
+  font: normal 600 16px/22px 'Raleway', sans-serif;
+  color: var(--black-6);
+}

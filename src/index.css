@@ -1,0 +1,117 @@
+* {
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar {
+    width: 4px;
+    -webkit-appearance: none;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #d9d1e0;
+    border-radius: 50px;
+    border: 0px solid #d9d1e0;
+}
+
+:root {
+    --vh: 1vh;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-family: 'Raleway', sans-serif;
+
+    /* Colores */
+
+    --black: #2b2d42;
+    --white: #fffbfc;
+
+    /* Black */
+
+    --black-1: #36384c;
+    --black-2: #414255;
+    --black-3: #555768;
+    --black-4: #6b6c7b;
+    --black-5: #80818e;
+    --black-6: #9495a0;
+    --black-7: #aaabb3;
+    --black-8: #c0c0c7;
+    --black-9: #d5d5d9;
+    --black-10: #dfe0e3;
+    --black-11: #eaeaed;
+    --black-12: #f4f4f5;
+
+    --primary: #a2d2ff;
+    --secondary: #ffafcc;
+
+    /* Primary */
+
+    --primary-1: #a7d4ff;
+    --primary-2: #acd7ff;
+    --primary-3: #b5dbff;
+    --primary-4: #bee0ff;
+    --primary-5: #c7e4ff;
+    --primary-6: #d0e8ff;
+    --primary-7: #daedff;
+    --primary-8: #e4f2ff;
+    --primary-9: #ecf6ff;
+    --primary-10: #f1f8ff;
+    --primary-11: #f6fbff;
+    --primary-12: #fafcff;
+
+    /* Secondary */
+    --secondary-1: #ffb3cf;
+    --secondary-2: #ffb7d2;
+    --secondary-3: #ffbfd6;
+    --secondary-4: #ffc7dc;
+    --secondary-5: #ffcfe0;
+    --secondary-6: #ffd6e5;
+    --secondary-7: #ffdfeb;
+    --secondary-8: #ffe7f0;
+    --secondary-9: #ffeff5;
+    --secondary-10: #fff3f8;
+    --secondary-11: #fff7fa;
+    --secondary-12: #fffbfc;
+
+    /* Common */
+
+    --background: #f4f4f5;
+    --background-1: #fafcff;
+    --background-2: #fffbfc;
+
+    --shadow-1: 0px 8px 16px rgba(62, 19, 77, 0.07);
+    --shadow-2: 0px 15px 30px rgba(62, 19, 77, 0.09);
+    --shadow-3: 0px 10px 30px rgba(62, 19, 77, 0.47);
+
+    /* Defaults */
+    --color-link: #bdb2ff;
+    --color-error: #e63946;
+    --color-approval: #00f5d4;
+    --color-attention: #fdffb6;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--vh) * 100);
+    background: var(--background);
+    min-height: calc(var(--vh) * 100);
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}

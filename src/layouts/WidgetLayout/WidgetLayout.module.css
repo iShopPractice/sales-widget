@@ -1,0 +1,152 @@
+.article {
+  width: 100%;
+  display: flex;
+  margin-bottom: auto;
+  flex-direction: column;
+  padding-block: 6px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  transition: ease-out 0.3s;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  gap: 22px;
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  padding: 6px 20px;
+  height: fit-content;
+  align-items: stretch;
+}
+
+.content::-webkit-scrollbar {
+  height: 0px;
+}
+
+.article .button {
+  padding: 6px 14px;
+  margin-left: auto;
+  color: var(--black-6);
+  font: normal 600 16px/22px 'Raleway', sans-serif;
+}
+
+.article .button > div {
+  width: 14px;
+  height: 14px;
+  display: grid;
+  aspect-ratio: 1/1;
+  place-items: center;
+}
+
+.article .button > div > svg {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.article .button div > svg > path {
+  fill: var(--black-6);
+}
+
+.article .button:is(:hover, :active) {
+  color: var(--primary);
+}
+
+.article .button:is(:hover, :active) div > svg > path {
+  fill: var(--primary);
+}
+
+.card {
+  position: relative;
+  gap: 20px;
+  display: flex;
+  padding: 8px 16px;
+  min-width: 360px;
+  aspect-ratio: 7/2;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  transition: ease-out 0.4s;
+
+  @starting-style {
+    blur: 2px;
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.image {
+  aspect-ratio: 1/1;
+  width: 68px;
+  height: 68px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: var(--primary-10);
+
+  transition: ease-out 0.6s;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.data {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  transition: ease-out 0.6s;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.variation {
+  width: 5ch;
+  position: absolute;
+  gap: 4px;
+  top: 12px;
+  right: 14px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  transition: ease-out 0.7s;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.shape {
+  width: 100%;
+  height: 14px;
+  background: var(--black-12);
+  border-radius: 6px;
+}
+
+.shape:first-child {
+  max-width: 6ch;
+}
+
+.shape:nth-child(2) {
+  max-width: 14ch;
+}
