@@ -26,7 +26,7 @@
   max-width: 100%;
   overflow: hidden;
   overflow-x: auto;
-  padding: 6px 20px;
+  padding: 6px 0px;
   height: fit-content;
   align-items: stretch;
 }
